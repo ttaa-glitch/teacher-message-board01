@@ -1,0 +1,55 @@
+{
+  "name": "teacher-message-board",
+  "version": "1.0.0",
+  "private": true,
+  "description": "教师节留言板 - 纯净版（无平台依赖，可直接部署）",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "tsx watch server/main.ts",
+    "dev:client": "vite",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:client": "vite build",
+    "start": "node dist/server/main.js",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.20",
+    "@nestjs/core": "^10.4.20",
+    "@nestjs/platform-express": "^10.4.20",
+    "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.4",
+    "lucide-react": "^0.469.0",
+    "postgres": "^3.4.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "drizzle-kit": "^0.30.2",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

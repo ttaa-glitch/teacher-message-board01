@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["ES2022"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "outDir": "dist/server",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "paths": {
+      "@server/*": ["server/*"],
+      "@shared/*": ["shared/*"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["server/**/*.ts", "shared/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
